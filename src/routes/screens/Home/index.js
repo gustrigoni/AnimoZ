@@ -11,7 +11,7 @@ export default class Home extends React.Component {
             <div className="screen-home-main-container">
                 <div className="bg">
                     <div className="bg-linear">
-                        <img className="logo" src={require('../../assets/images/big-logo-branco.png')} alt=""/>
+                        <img className="logo" src={require('../../../assets/images/big-logo-branco.png')} alt=""/>
                     </div>
                 </div>
                 <div className="search-container">

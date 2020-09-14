@@ -4,7 +4,7 @@ import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './assets/css/_global.css';
 
-import Routes from './../src/core/Routes';
+import Routes from './../src/routes';
 
 ReactDOM.render(
   <React.StrictMode>

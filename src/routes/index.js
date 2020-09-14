@@ -1,8 +1,8 @@
 import React from "react";
 
-import Home from './../../screens/Home';
-import Watch from './../../screens/Watch';
-import Error404 from './../../screens/Error404';
+import Home from './screens/Home';
+import Watch from './screens/Watch';
+import Error404 from './screens/Error404';
 import { elastic as Menu } from 'react-burger-menu'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 

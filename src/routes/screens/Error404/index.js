@@ -9,7 +9,7 @@ export default class Erro404 extends React.Component {
         return (
 
             <div className="screen-error404-main-container">
-                <img src={require('./../../assets/images/dbz/goku-cansado.png')} alt="carregando..." />
+                <img src={require('./../../../assets/images/dbz/goku-cansado.png')} alt="carregando..." />
                 <div className="screen-error404-container">
                     <p>
                         Erro / <b>404</b>
