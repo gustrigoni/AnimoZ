@@ -52,7 +52,16 @@ export default class Watch extends React.Component {
                                     </div>
                                     <div className="comentarios">
                                         <span>Comentários</span>
-                                        
+                                        <div className="lista">
+                                            <div className="comentario-container">
+                                                <div className="avatar">
+                                                    <img src="https://media3.giphy.com/media/4ilFRqgbzbx4c/giphy.gif" alt="" />
+                                                </div>
+                                                <div className="comentario">
+                                                    <span name="usuario">iRaily</span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -36,6 +36,7 @@
                 align-items: center;
                 margin-top: 150px;
                 width: 960px;
+                margin-bottom: 25px;
 
                 .video-container {
 
@@ -58,12 +59,54 @@
                         .comentarios {
 
                             padding-top: 20px;
-                            width: 100%;
+                            width: 100%;                          
 
                             span {
 
                                 font-size: 14px;
                                 text-transform: uppercase;
+
+                                // &:after {
+
+                                //     content:"";
+                                //     position: absolute;
+                                //     bottom: 0;
+                                //     left: 0;
+                                //     right: 0;
+                                //     height: 0.5em;
+                                //     border-top: 1px solid black;
+                                //     z-index: -1;
+    
+                                // }
+
+                            }
+
+                            .lista {
+
+                                display: flex;
+                                flex-flow: column;
+
+                                .comentario-container {
+
+                                    display: flex;
+                                    padding-left: 15px;
+                                    flex-flow: row;
+                                    
+                                    .avatar {
+
+                                        width: 75px;
+
+                                        img {
+
+                                            width: 60px;
+                                            border-radius: 50%;
+
+                                        }
+                                        
+
+                                    }
+
+                                }
 
                             }
 
@@ -108,12 +151,6 @@
 
                             }
 
-                        }
-
-                        .descricao {
-    
-                        
-        
                         }
 
                     }
