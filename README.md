@@ -19,11 +19,11 @@ More functions, a better code and coolest designs is coming, keep updated.
 
 
 ## Home
-![Home](https://imgur.com/rrZ8N5c)
-![HomeList](https://imgur.com/tDQKfcZ)
+![Home](https://i.imgur.com/rrZ8N5c.png)
+![HomeList](https://i.imgur.com/tDQKfcZ.png)
 A beatiful and simple home page with video's lists preview.
 
 ## Watch
-![Watch Screen](https://imgur.com/OwHX0Vn)
-![Watch Screen Comments](https://imgur.com/7IAst7J)
+![Watch Screen](https://i.imgur.com/OwHX0Vn.png)
+![Watch Screen Comments](https://i.imgur.com/7IAst7J.png)
 New * watch * screen, now you can watch and interact with other users when you are having fun. I'm working to make a better use experience here, in the next version it will have e a good new hot function.
