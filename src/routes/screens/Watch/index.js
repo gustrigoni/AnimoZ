@@ -51,7 +51,7 @@ export default class Watch extends React.Component {
                                         <a>Próximo episódio</a>
                                     </div>
                                     <div className="comentarios">
-                                        <span>Comentários</span>
+                                        <span name="comentarios">Comentários</span>
                                         <div className="lista">
                                             <div className="comentario-container">
                                                 <div className="avatar">
@@ -59,6 +59,38 @@ export default class Watch extends React.Component {
                                                 </div>
                                                 <div className="comentario">
                                                     <span name="usuario">iRaily</span>
+                                                    <span name="data">Agora mesmo</span>
+                                                    <span name="descricao">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+                                                </div>
+                                            </div>
+                                            <div className="comentario-container">
+                                                <div className="avatar">
+                                                    <img src="https://media3.giphy.com/media/4ilFRqgbzbx4c/giphy.gif" alt="" />
+                                                </div>
+                                                <div className="comentario">
+                                                    <span name="usuario">iRaily</span>
+                                                    <span name="data">Há uma hora</span>
+                                                    <span name="descricao">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+                                                </div>
+                                            </div>
+                                            <div className="comentario-container">
+                                                <div className="avatar">
+                                                    <img src="https://media3.giphy.com/media/4ilFRqgbzbx4c/giphy.gif" alt="" />
+                                                </div>
+                                                <div className="comentario">
+                                                    <span name="usuario">iRaily</span>
+                                                    <span name="data">Hoje</span>
+                                                    <span name="descricao">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+                                                </div>
+                                            </div>
+                                            <div className="comentario-container">
+                                                <div className="avatar">
+                                                    <img src="https://media3.giphy.com/media/4ilFRqgbzbx4c/giphy.gif" alt="" />
+                                                </div>
+                                                <div className="comentario">
+                                                    <span name="usuario">iRaily</span>
+                                                    <span name="data">23 de Janeiro de 2020</span>
+                                                    <span name="descricao">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
                                                 </div>
                                             </div>
                                         </div>

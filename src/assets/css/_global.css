@@ -281,25 +281,59 @@
     padding-top: 20px;
     width: 100%;
   }
-  .screen-watch-main-container .bg-linear .container .video-container .sobre .comentarios span {
+  .screen-watch-main-container .bg-linear .container .video-container .sobre .comentarios span[name=comentarios] {
     font-size: 14px;
     text-transform: uppercase;
+    color: #333;
+  }
+  .screen-watch-main-container .bg-linear .container .video-container .sobre .comentarios span[name=comentarios]:after {
+    content: "";
+    display: block;
+    width: 35px;
+    border-bottom: 3px solid #222;
   }
   .screen-watch-main-container .bg-linear .container .video-container .sobre .comentarios .lista {
     display: flex;
     flex-flow: column;
+    margin-top: 20px;
   }
   .screen-watch-main-container .bg-linear .container .video-container .sobre .comentarios .lista .comentario-container {
     display: flex;
     padding-left: 15px;
     flex-flow: row;
+    margin-top: 40px;
+  }
+  .screen-watch-main-container .bg-linear .container .video-container .sobre .comentarios .lista .comentario-container:first-child {
+    margin: 0;
+  }
+  .screen-watch-main-container .bg-linear .container .video-container .sobre .comentarios .lista .comentario-container .comentario {
+    display: flex;
+    flex-flow: column;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .screen-watch-main-container .bg-linear .container .video-container .sobre .comentarios .lista .comentario-container .comentario span[name=usuario] {
+    color: firebrick;
+    text-transform: unset;
+    font-size: 15px;
+  }
+  .screen-watch-main-container .bg-linear .container .video-container .sobre .comentarios .lista .comentario-container .comentario span[name=data] {
+    color: #333;
+    text-transform: unset;
+    font-size: 11px;
+  }
+  .screen-watch-main-container .bg-linear .container .video-container .sobre .comentarios .lista .comentario-container .comentario span[name=descricao] {
+    color: #666;
+    text-transform: unset;
+    font-size: 13px;
   }
   .screen-watch-main-container .bg-linear .container .video-container .sobre .comentarios .lista .comentario-container .avatar {
-    width: 75px;
+    width: 80px;
   }
   .screen-watch-main-container .bg-linear .container .video-container .sobre .comentarios .lista .comentario-container .avatar img {
-    width: 60px;
-    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
   }
   .screen-watch-main-container .bg-linear .container .video-container .sobre .serie {
     display: flex;
@@ -334,6 +368,7 @@ body {
 
 * {
   font-family: "Varela Round", sans-serif;
+  outline: none !important;
 }
 
 a {

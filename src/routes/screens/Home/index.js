@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ReactStars from "react-rating-stars-component";
 
 export default class Home extends React.Component {
