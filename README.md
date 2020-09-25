@@ -1,4 +1,4 @@
-#AnimoZ
+# AnimoZ
 
 AnimoZ is a project with ReactJS.
 I'm coding AnimoZ while my free time and it is supposed to be a template responsive and modern design for small websites for music and videos streaming.
@@ -18,12 +18,12 @@ More functions, a better code and coolest designs is coming, keep updated.
 > much more.. xD
 
 
-##Home
+## Home
 ![Home](https://imgur.com/rrZ8N5c)
 ![HomeList](https://imgur.com/tDQKfcZ)
 A beatiful and simple home page with video's lists preview.
 
-##Watch
+## Watch
 ![Watch Screen](https://imgur.com/OwHX0Vn)
 ![Watch Screen Comments](https://imgur.com/7IAst7J)
-New *watch* screen, now you can watch and interact with other users when you are having fun. I'm working to make a better use experience here, in the next version it will have e a good new hot function.
+New * watch * screen, now you can watch and interact with other users when you are having fun. I'm working to make a better use experience here, in the next version it will have e a good new hot function.
