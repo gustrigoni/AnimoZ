@@ -5,7 +5,9 @@ I'm coding AnimoZ while my free time and it is supposed to be a template respons
 
 ###### v1.0 - https://animo-z.vercel.app/
 > responsiveness: only medium desktop has been fixed;
+
 > new screen and route /watch;
+
 > font awesome added;
 
 ###### Don't worry about this version
@@ -14,8 +16,10 @@ More functions, a better code and coolest designs is coming, keep updated.
 
 ###### Next version
 > responsive base to all devices sizes
+
 > updates in video's screen to watch
-> much more.. xD
+
+> and much more.. xD
 
 
 ## Home
