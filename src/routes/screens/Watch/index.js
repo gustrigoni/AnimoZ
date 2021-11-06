@@ -10,7 +10,7 @@ export default class Watch extends React.Component {
         return (
 
             <div className="screen-watch-main-container">
-                <div style={{backgroundImage: "url(https://images.wallpapersden.com/image/download/akatsuki-organization-anime_67572_3840x2160.jpg)"}} className="bg">
+                <div style={{ backgroundImage: `url(${require('../../../assets/images/naruto_bg.jpg')})` }} className="bg">
                     <div className="bg-linear">
                         <div className="container">
                             <div className="video-container">

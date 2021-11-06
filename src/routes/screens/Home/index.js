@@ -1,6 +1,4 @@
 import React from 'react';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ReactStars from "react-rating-stars-component";
 
 export default class Home extends React.Component {
