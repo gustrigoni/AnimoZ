@@ -7,7 +7,7 @@ export default class Home extends React.Component {
         return (
 
             <div className="screen-home-main-container">
-                <div className="bg">
+                <div style={{ backgroundImage: `url(${require('../../../assets/images/dbz/home_bg.png')})`, backgroundPosition: '0px -200px' }} className="bg">
                     <div className="bg-linear">
                         <img className="logo" src={require('../../../assets/images/big-logo-branco.png')} alt=""/>
                     </div>
