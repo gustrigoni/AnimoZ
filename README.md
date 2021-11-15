@@ -1,5 +1,8 @@
 # AnimoZ
 
+https://animo-z.vercel.app/
+https://animo-z.vercel.app/watch
+
 AnimoZ is a project with ReactJS.
 I'm coding AnimoZ while my free time and it is supposed to be a template responsive and modern design for small websites for music and videos streaming.
 
