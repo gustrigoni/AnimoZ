@@ -44,5 +44,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-burger-menu": "^2.8.2",
+    "@types/react-router-dom": "^5.3.2"
   }
 }
