@@ -1,17 +1,47 @@
 import React from 'react';
+
 import "video-react/dist/video-react.css";
 
-import { Player, ControlBar, ReplayControl, ForwardControl, LoadingSpinner, Shortcut, BigPlayButton } from 'video-react';
+import {
+  Player,
+  ControlBar,
+  ReplayControl,
+  ForwardControl,
+  LoadingSpinner,
+  Shortcut,
+  BigPlayButton
+} from 'video-react';
+
+import {
+  Container,
+  Cover,
+  LinearCover,
+  Row,
+  VideoRow,
+  Video,
+  About,
+  MovieRow,
+  Movie,
+  Name,
+  NextOne,
+  Comments,
+  Text,
+  CommentsRow,
+  Comment,
+  Avatar,
+  AvatarImg,
+} from './styles';
+
 import { Rating } from 'react-simple-star-rating';
 
 export function Watch() {
   return (
-    <div className="screen-watch-main-container">
-      <div style={{ backgroundImage: `url(${require('../../assets/images/naruto_bg.jpg')})` }} className="bg">
-        <div className="bg-linear">
-          <div className="container">
-            <div className="video-container">
-              <div className="video">
+    <Container>
+      <Cover>
+        <LinearCover>
+          <Row>
+            <VideoRow>
+              <Video>
                 <Player
                   fluid={false}
                   width={960}
@@ -29,29 +59,35 @@ export function Watch() {
                   <Shortcut clickable={true} />
                   <LoadingSpinner />
                 </Player>
-              </div>
+              </Video>
               <div className="sobre">
                 <div className="serie">
                   <div className="titulo">
                     <h2>Dragon Ball Super</h2>
-                    <Rating
-                      onClick={(newRating: Number) => console.log(newRating)}
-                      ratingValue={3}
-                    />
+                    {/* <ReactStars
+                      count={5}
+                      onChange={(nota) => console.log(nota)}
+                      size={24}
+                      isHalf={true}
+                      emptyIcon={<i className="far fa-star"></i>}
+                      halfIcon={<i className="fa fa-star-half-alt"></i>}
+                      fullIcon={<i className="fa fa-star"></i>}
+                      activeColor="#ffd700"
+                    /> */}
                   </div>
-                  <a href="/watch">Próximo episódio</a>
+                  <a>Próximo episódio</a>
                 </div>
                 <div className="comentarios">
-                  <span>Comentários</span>
+                  <span className="comentarios">Comentários</span>
                   <div className="lista">
                     <div className="comentario-container">
                       <div className="avatar">
                         <img src="https://media3.giphy.com/media/4ilFRqgbzbx4c/giphy.gif" alt="" />
                       </div>
                       <div className="comentario">
-                        <span>iRaily</span>
-                        <span>Agora mesmo</span>
-                        <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+                        <span className="usuario">iRaily</span>
+                        <span className="data">Agora mesmo</span>
+                        <span className="descricao">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
                       </div>
                     </div>
                     <div className="comentario-container">
@@ -59,9 +95,9 @@ export function Watch() {
                         <img src="https://media3.giphy.com/media/4ilFRqgbzbx4c/giphy.gif" alt="" />
                       </div>
                       <div className="comentario">
-                        <span>iRaily</span>
-                        <span>Há uma hora</span>
-                        <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+                        <span className="usuario">iRaily</span>
+                        <span className="data">Há uma hora</span>
+                        <span className="descricao">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
                       </div>
                     </div>
                     <div className="comentario-container">
@@ -69,9 +105,9 @@ export function Watch() {
                         <img src="https://media3.giphy.com/media/4ilFRqgbzbx4c/giphy.gif" alt="" />
                       </div>
                       <div className="comentario">
-                        <span>iRaily</span>
-                        <span>Hoje</span>
-                        <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+                        <span className="usuario">iRaily</span>
+                        <span className="data">Hoje</span>
+                        <span className="descricao">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
                       </div>
                     </div>
                     <div className="comentario-container">
@@ -79,19 +115,18 @@ export function Watch() {
                         <img src="https://media3.giphy.com/media/4ilFRqgbzbx4c/giphy.gif" alt="" />
                       </div>
                       <div className="comentario">
-                        <span>iRaily</span>
-                        <span>23 de Janeiro de 2020</span>
-                        <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+                        <span className="usuario">iRaily</span>
+                        <span className="data">23 de Janeiro de 2020</span>
+                        <span className="descricao">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+            </VideoRow>
+          </Row>
+        </LinearCover>
+      </Cover>
+    </Container>
   );
 }
