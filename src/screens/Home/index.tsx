@@ -1,222 +1,117 @@
-import React from 'react';
-import { Rating, RatingView } from 'react-simple-star-rating';
+import React, { useEffect, useState } from 'react';
+
+import axios from 'axios';
+import { WatchList } from './../../components/WatchList';
+
+import {
+  Container,
+  Cover,
+  CoverContainer,
+  Logo,
+  Search,
+  SearchField,
+  Videos,
+} from './styles'
+import { Redirect, useHistory } from 'react-router';
+
+interface TMDBRequestParams {
+  page: number;
+}
+interface MovieItemAPI {
+  id: number,
+  title: string;
+  poster_path: string;
+  vote_average: number;
+}
+export interface Movie {
+  id: number;
+  title: string;
+  poster: string;
+  rating: number;
+}
 
 export function Home() {
+
+  // movies list
+  const [watchList, setWatchList] = useState<Array<Movie[]>>([]);
+
+  // set max movies lists
+  const maxLists: number = 5;
+
+  // history to navigate
+  const history = useHistory();
+
+  /**
+   * Create movies lists to watch
+   */
+  async function createList({ page }: TMDBRequestParams) {
+
+    // get movie datas
+    const { data } = await axios.get(`/list/${page}`, {
+      params: {
+        language: 'pt-BR'
+      }
+    });
+
+    // mount a new list
+    const newWatchList = data.items
+      .filter((item: { adult: boolean }) => item.adult !== true) // filter movies that is not adult only
+      // loop movies data
+      .map((movie: MovieItemAPI) => {
+        return {
+          id: movie.id,
+          title: movie.title,
+          poster: movie.poster_path,
+          rating: movie.vote_average / 2
+        }
+      })
+
+    setWatchList((oldWatchList: Array<Movie[]>) => {
+      return oldWatchList.concat([newWatchList])
+    });
+
+  }
+
+  useEffect(() => {
+
+    // array looping
+    for (let i = 0; i < maxLists; i++) {
+
+      // plus one with the index count
+      const page: number = i + 1;
+
+      // create the list
+      createList({ page });
+
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
-    <div className="screen-home-main-container">
-      <div style={{ backgroundImage: `url(${require('../../assets/images/dbz/home_bg.png')})`, backgroundPosition: '0px -200px' }} className="bg">
-        <div className="bg-linear">
-          <img className="logo" src={require('../../assets/images/big-logo-branco.png')} alt="" />
-        </div>
-      </div>
-      <div className="search-container">
-        <input placeholder="O que vamos assistir hoje?"></input>
-      </div>
-      <div className="top-videos">
-        <div className="thumb-list-container">
-          <h2>Lançamentos</h2>
-          <div className="thumb-list">
-            <div className="thumb-container">
-              <img src="https://cdn.flickeringmyth.com/wp-content/uploads/2020/05/Rick-and-Morty-Season-4-Episode-7--600x327.png" />
-              <div className="description">
-                {/* <ReactStars
-                                    count={5}
-                                    size={30}
-                                    onClick={(newRating) => console.log(newRating)}
-                                    isHalf={true}
-                                    emptyIcon={<i className="far fa-star"></i>}
-                                    halfIcon={<i className="fa fa-star-half-alt"></i>}
-                                    fullIcon={<i className="fa fa-star"></i>}
-                                    activeColor="#ffd700"
-                                /> */}
-                <Rating
-                  onClick={(newRating: Number) => console.log(newRating)}
-                  ratingValue={3}
-                />
-                <h2>Teste</h2>
-                <span>aaaaa</span>
-              </div>
-            </div>
-            <div className="thumb-container">
-              <img src="https://cdn.flickeringmyth.com/wp-content/uploads/2020/05/Rick-and-Morty-Season-4-Episode-7--600x327.png" />
-              <div class="description">
-                <h2>Teste</h2>
-                <span>aaaaa</span>
-              </div>
-            </div>
-            <div className="thumb-container">
-              <img src="https://cdn.flickeringmyth.com/wp-content/uploads/2020/05/Rick-and-Morty-Season-4-Episode-7--600x327.png" />
-              <div class="description">
-                <h2>Teste</h2>
-                <span>aaaaa</span>
-              </div>
-            </div>
-            <div className="thumb-container">
-              <img src="https://cdn.flickeringmyth.com/wp-content/uploads/2020/05/Rick-and-Morty-Season-4-Episode-7--600x327.png" />
-              <div class="description">
-                <h2>Teste</h2>
-                <span>aaaaa</span>
-              </div>
-            </div>
-            <div className="thumb-container">
-              <img src="https://cdn.flickeringmyth.com/wp-content/uploads/2020/05/Rick-and-Morty-Season-4-Episode-7--600x327.png" />
-              <div class="description">
-                <h2>Teste</h2>
-                <span>aaaaa</span>
-              </div>
-            </div>
-            <div className="thumb-container">
-              <img src="https://cdn.flickeringmyth.com/wp-content/uploads/2020/05/Rick-and-Morty-Season-4-Episode-7--600x327.png" />
-              <div class="description">
-                <h2>Teste</h2>
-                <span>aaaaa</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="thumb-list-container">
-          <h2>Mais curtidos</h2>
-          <div className="thumb-list">
-            <div className="thumb-container">
-              <img src="https://cdn.flickeringmyth.com/wp-content/uploads/2020/05/Rick-and-Morty-Season-4-Episode-7--600x327.png" />
-              <div class="description">
-                <h2>Teste</h2>
-                <span>aaaaa</span>
-              </div>
-            </div>
-            <div className="thumb-container">
-              <img src="https://cdn.flickeringmyth.com/wp-content/uploads/2020/05/Rick-and-Morty-Season-4-Episode-7--600x327.png" />
-              <div class="description">
-                <h2>Teste</h2>
-                <span>aaaaa</span>
-              </div>
-            </div>
-            <div className="thumb-container">
-              <img src="https://cdn.flickeringmyth.com/wp-content/uploads/2020/05/Rick-and-Morty-Season-4-Episode-7--600x327.png" />
-              <div class="description">
-                <h2>Teste</h2>
-                <span>aaaaa</span>
-              </div>
-            </div>
-            <div className="thumb-container">
-              <img src="https://cdn.flickeringmyth.com/wp-content/uploads/2020/05/Rick-and-Morty-Season-4-Episode-7--600x327.png" />
-              <div class="description">
-                <h2>Teste</h2>
-                <span>aaaaa</span>
-              </div>
-            </div>
-            <div className="thumb-container">
-              <img src="https://cdn.flickeringmyth.com/wp-content/uploads/2020/05/Rick-and-Morty-Season-4-Episode-7--600x327.png" />
-              <div class="description">
-                <h2>Teste</h2>
-                <span>aaaaa</span>
-              </div>
-            </div>
-            <div className="thumb-container">
-              <img src="https://cdn.flickeringmyth.com/wp-content/uploads/2020/05/Rick-and-Morty-Season-4-Episode-7--600x327.png" />
-              <div class="description">
-                <h2>Teste</h2>
-                <span>aaaaa</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="thumb-list-container">
-          <h2>Em alta</h2>
-          <div className="thumb-list">
-            <div className="thumb-container">
-              <img src="https://cdn.flickeringmyth.com/wp-content/uploads/2020/05/Rick-and-Morty-Season-4-Episode-7--600x327.png" />
-              <div class="description">
-                <h2>Teste</h2>
-                <span>aaaaa</span>
-              </div>
-            </div>
-            <div className="thumb-container">
-              <img src="https://cdn.flickeringmyth.com/wp-content/uploads/2020/05/Rick-and-Morty-Season-4-Episode-7--600x327.png" />
-              <div class="description">
-                <h2>Teste</h2>
-                <span>aaaaa</span>
-              </div>
-            </div>
-            <div className="thumb-container">
-              <img src="https://cdn.flickeringmyth.com/wp-content/uploads/2020/05/Rick-and-Morty-Season-4-Episode-7--600x327.png" />
-              <div class="description">
-                <h2>Teste</h2>
-                <span>aaaaa</span>
-              </div>
-            </div>
-            <div className="thumb-container">
-              <img src="https://cdn.flickeringmyth.com/wp-content/uploads/2020/05/Rick-and-Morty-Season-4-Episode-7--600x327.png" />
-              <div class="description">
-                <h2>Teste</h2>
-                <span>aaaaa</span>
-              </div>
-            </div>
-            <div className="thumb-container">
-              <img src="https://cdn.flickeringmyth.com/wp-content/uploads/2020/05/Rick-and-Morty-Season-4-Episode-7--600x327.png" />
-              <div class="description">
-                <h2>Teste</h2>
-                <span>aaaaa</span>
-              </div>
-            </div>
-            <div className="thumb-container">
-              <img src="https://cdn.flickeringmyth.com/wp-content/uploads/2020/05/Rick-and-Morty-Season-4-Episode-7--600x327.png" />
-              <div class="description">
-                <h2>Teste</h2>
-                <span>aaaaa</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="thumb-list-container">
-          <h2>Populares</h2>
-          <div className="thumb-list">
-            <div className="thumb-container">
-              <img src="https://cdn.flickeringmyth.com/wp-content/uploads/2020/05/Rick-and-Morty-Season-4-Episode-7--600x327.png" />
-              <div class="description">
-                <h2>Teste</h2>
-                <span>aaaaa</span>
-              </div>
-            </div>
-            <div className="thumb-container">
-              <img src="https://cdn.flickeringmyth.com/wp-content/uploads/2020/05/Rick-and-Morty-Season-4-Episode-7--600x327.png" />
-              <div class="description">
-                <h2>Teste</h2>
-                <span>aaaaa</span>
-              </div>
-            </div>
-            <div className="thumb-container">
-              <img src="https://cdn.flickeringmyth.com/wp-content/uploads/2020/05/Rick-and-Morty-Season-4-Episode-7--600x327.png" />
-              <div class="description">
-                <h2>Teste</h2>
-                <span>aaaaa</span>
-              </div>
-            </div>
-            <div className="thumb-container">
-              <img src="https://cdn.flickeringmyth.com/wp-content/uploads/2020/05/Rick-and-Morty-Season-4-Episode-7--600x327.png" />
-              <div class="description">
-                <h2>Teste</h2>
-                <span>aaaaa</span>
-              </div>
-            </div>
-            <div className="thumb-container">
-              <img src="https://cdn.flickeringmyth.com/wp-content/uploads/2020/05/Rick-and-Morty-Season-4-Episode-7--600x327.png" />
-              <div class="description">
-                <h2>Teste</h2>
-                <span>aaaaa</span>
-              </div>
-            </div>
-            <div className="thumb-container">
-              <img src="https://cdn.flickeringmyth.com/wp-content/uploads/2020/05/Rick-and-Morty-Season-4-Episode-7--600x327.png" />
-              <div class="description">
-                <h2>Teste</h2>
-                <span>aaaaa</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Container>
+      <Cover>
+        <CoverContainer>
+          <Logo />
+        </CoverContainer>
+      </Cover>
+      <Search>
+        <SearchField onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            return history.push('/watch')
+          }
+        }} />
+      </Search>
+      <Videos>
+        {watchList.map((watch, index) => {
+          return <WatchList
+            key={index}
+            title={'Teste'}
+            items={watch}
+          />
+        })}
+      </Videos>
+    </Container>
   );
 
 }

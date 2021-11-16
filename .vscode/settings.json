@@ -2,4 +2,12 @@
   "editor.tabSize": 2,
   "explorer.compactFolders": false,
   "editor.formatOnSave": true,
+  "saveAndRun": {
+    "commands": [
+      {
+        "match": ".scss",
+        "cmd": "echo Compilando arquivo .scss && yarn sass src/assets/sass/_global.scss src/assets/css/global.css",
+      },
+    ]
+  }
 }

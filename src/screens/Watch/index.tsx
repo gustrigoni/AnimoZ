@@ -39,7 +39,7 @@ export function Watch() {
                       ratingValue={3}
                     />
                   </div>
-                  <a>Próximo episódio</a>
+                  <a href="/watch">Próximo episódio</a>
                 </div>
                 <div className="comentarios">
                   <span>Comentários</span>
