@@ -1,13 +1,5 @@
-import styled, { css } from "styled-components";
-
+import styled from "styled-components";
 import background from './../../assets/images/naruto_bg.jpg';
-
-interface TextSpan {
-  underline?: boolean;
-  name?: boolean;
-  date?: boolean;
-  description?: boolean;
-}
 
 export const Container = styled.div`
   width: 100%;
@@ -109,67 +101,13 @@ export const Comments = styled.div`
 `;
 
 export const Text = styled.span`
- ${(props: TextSpan) => {
-    if (props.underline) {
-      return css`
-        font-size: 0.8vw;
-        text-transform: uppercase;
-        color: #333;  
-        &:after {
-          content:"";
-          display: block;
-          width: 35px;
-          border-bottom: 3px solid #222;
-        }
-     `;
-    } else if (props.name) {
-      return css`
-        color: #b22222;
-        text-transform: unset;
-        font-size: 0.9vw;
-      `;
-    } else if (props.date) {
-      return css`
-        color: #333;
-        text-transform: unset;
-        font-size: 0.7vw;
-      `;
-    } else if (props.description) {
-      return css`
-        color: #666;
-        text-transform: unset;
-        font-size: 0.6vw;
-      `;
-    }
-  }}
-`;
-
-export const CommentsRow = styled.div`
-  display: flex;
-  flex-flow: column;
-  margin-top: 1vw;
-`;
-
-export const CommentContainer = styled.div`
-  display: flex;
-  padding-left: 0.7vw;
-  flex-flow: row;
-  margin-top: 2vw;
-  &:first-child {
-    margin: 0;
+  font-size: 0.8vw;
+  text-transform: uppercase;
+  color: #333;  
+  &:after {
+    content:"";
+    display: block;
+    width: 35px;
+    border-bottom: 3px solid #222;
   }
-`;
-
-export const Comment = styled.div`
-  display: flex;
-  flex-flow: column;
-  padding-left: 10px;
-  padding-right: 10px;
-`;
-
-export const AvatarImg = styled.img`
-  width: 3.6vw;
-  height: 3.6vw;
-  border-radius: 100%;
-  object-fit: cover;
 `;

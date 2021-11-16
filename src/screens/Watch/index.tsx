@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import "video-react/dist/video-react.css";
 
@@ -24,15 +24,19 @@ import {
   Movie,
   Name,
   NextOne,
-  Comments,
+  Comments as CommentsContainer,
   Text,
-  CommentsRow,
-  CommentContainer,
-  Comment,
-  AvatarImg,
 } from './styles';
 
 import { comments } from '../../helpers/comments';
+import { Comments } from '../../components/Comments';
+interface CommentInterface {
+  id: number;
+  avatar: string;
+  timeAgo: string;
+  username: string;
+  text: string;
+}
 
 export function Watch() {
   return (
@@ -67,21 +71,15 @@ export function Watch() {
                   </MovieRow>
                   <NextOne>Próximo episódio</NextOne>
                 </Movie>
-                <Comments>
-                  <Text underline={true}>Comentários</Text>
-                  {comments.map(comment => {
-                    return <CommentsRow>
-                      <CommentContainer>
-                        <AvatarImg src={comment.avatar} />
-                        <Comment>
-                          <Text name={true}>{comment.username}</Text>
-                          <Text date={true}>{comment.timeAgo}</Text>
-                          <Text description={true}>{comment.text}</Text>
-                        </Comment>
-                      </CommentContainer>
-                    </CommentsRow>
+                <CommentsContainer>
+                  <Text>Comentários</Text>
+                  {comments.map((comment: CommentInterface) => {
+                    return <Comments
+                      key={comment.id}
+                      {...comment}
+                    />
                   })}
-                </Comments>
+                </CommentsContainer>
               </About>
             </VideoRow>
           </Row>
