@@ -12,7 +12,7 @@ import {
   SearchField,
   Videos,
 } from './styles'
-import { Redirect, useHistory } from 'react-router';
+import { useHistory } from 'react-router';
 
 interface TMDBRequestParams {
   page: number;
@@ -34,6 +34,15 @@ export function Home() {
 
   // movies list
   const [watchList, setWatchList] = useState<Array<Movie[]>>([]);
+
+  // list title
+  const watchListTitles = [
+    'Top filmes 😎',
+    '🥰 Queridinhos da familía',
+    '🧛‍♂️🥷🦸‍♀️',
+    '🔥 Em alta',
+    'Especial para você 💅'
+  ];
 
   // set max movies lists
   const maxLists: number = 5;
@@ -106,7 +115,7 @@ export function Home() {
         {watchList.map((watch, index) => {
           return <WatchList
             key={index}
-            title={'Teste'}
+            title={watchListTitles[index % maxLists]}
             items={watch}
           />
         })}

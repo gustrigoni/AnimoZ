@@ -6,7 +6,9 @@
     "commands": [
       {
         "match": ".scss",
-        "cmd": "echo Compilando arquivo .scss && yarn sass src/assets/sass/_global.scss src/assets/css/global.css",
+        "cmd": "yarn sass src/assets/sass/_global.scss src/assets/css/global.css",
+        "useShortcut": false,
+        "silent": false
       },
     ]
   }

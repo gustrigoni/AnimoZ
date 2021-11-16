@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'react-toastify/dist/ReactToastify.css';
+import './assets/css/global.css';
 
 import { ToastContainer } from 'react-toastify';
 import { Routes } from './routes';
