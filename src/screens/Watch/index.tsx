@@ -35,9 +35,6 @@ import {
 import { comments } from '../../helpers/comments';
 
 export function Watch() {
-
-  const [rate, setRate] = useState(4);
-
   return (
     <Container>
       <Cover>
