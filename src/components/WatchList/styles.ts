@@ -74,7 +74,6 @@ export const About = styled.div`
   bottom: 0;
   position: absolute;
   margin-bottom: 10px;
-  height: 12vh;
   overflow: hidden;
 `;
 
@@ -85,8 +84,4 @@ export const Name = styled.h2`
   overflow: hidden;
   text-overflow: ellipsis;
   margin: 0;
-`;
-
-export const Description = styled.span`
-  color: #ccc;
 `;

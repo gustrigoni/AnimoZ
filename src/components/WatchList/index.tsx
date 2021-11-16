@@ -10,7 +10,6 @@ import {
   Poster,
   About,
   Name,
-  Description,
   Stars
 } from './styles';
 
@@ -59,7 +58,6 @@ function _WatchList({
                 />
               </Stars>
               <Name>{title}</Name>
-              <Description>aaaaa</Description>
             </About>
           </Movie>
         })}
