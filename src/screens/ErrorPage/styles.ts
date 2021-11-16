@@ -48,7 +48,10 @@ export const Description = styled.p`
   background-color: rgba(155, 155, 155, 0.1);
 `;
 
-export const Emoji = styled.span``;
+export const Emoji = styled.span.attrs({
+  role: "img",
+  ariaLabel: "Thinking head"
+})``;
 
 export const Warning = styled.span`
   font-size: 0.8vw;

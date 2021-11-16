@@ -19,7 +19,8 @@ export function ErrorPage() {
         <Message>Erro / <b>404</b></Message>
         <Description>
           Hmm, estranho...
-          <Emoji role="img" aria-label="Thinking head">🤔</Emoji>
+          {/* eslint-disable-next-line */}
+          <Emoji>🤔</Emoji>
         </Description>
         <Warning>A página que você está tentando acessar não existe.</Warning>
         <Button>Voltar</Button>
