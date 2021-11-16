@@ -37,22 +37,22 @@ export const Row = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 150px;
-  width: 50vw;
-  align-self: center; 
-  margin-bottom: 1vh;
-  padding-bottom: 9vh;
+  align-self: center;
+  width: 100%;
+  padding-bottom: 20px;
+
 `;
 
 export const VideoRow = styled.div`
   display: flex;
   flex-flow: column;
-  width: 50vw;
+  min-width: 90%;
+  max-width: 58vw;
+  height: 58vh;
 `;
 
 export const Video = styled.div`
   box-shadow: 0vh 0vh 1.5vh #000;
-  max-width: 50vw;
-  max-height: 58vh;
 `;
 
 export const About = styled.div`
@@ -60,7 +60,7 @@ export const About = styled.div`
   margin-top: 1.5vw;
   background-color: #161515;
   border-radius: 0.5vw;
-  width: 50vw;
+  width: 100%;
 `;
 
 export const MovieRow = styled.div`

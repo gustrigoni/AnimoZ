@@ -7,6 +7,7 @@ export const Container = styled.div`
 export const Title = styled.h2`
   color: #666;
   font-weight: bold;
+  font-size: 2rem;
 `;
 
 export const Movies = styled.div`
@@ -53,10 +54,10 @@ export const Poster = styled.img`
   border-radius: 10px;
   object-fit: cover;
   width: 18vw;
-  height: 26vh;
+  height: 90%;
   &:hover {
     width: 19vw;
-    height: 28vh;
+    height: 92%;
     z-index: 1;
     filter: drop-shadow(0px 0px 5px #000);
   }
