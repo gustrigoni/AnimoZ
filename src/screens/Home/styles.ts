@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import background from './../../assets/images/naruto_bg.jpg';
-import logo from './../../assets/images/big-logo-branco.png'
+import logo from './../../assets/images/logo-white.png'
 
 export const Container = styled.div`
   width: 100%;
