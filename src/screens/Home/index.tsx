@@ -13,6 +13,7 @@ import {
   Videos,
 } from './styles'
 import { useHistory } from 'react-router';
+import { toast } from 'react-toastify';
 
 interface TMDBRequestParams {
   page: number;
@@ -38,7 +39,7 @@ export function Home() {
   // list title
   const watchListTitles = [
     'Top filmes 😎',
-    '🥰 Queridinhos da familía',
+    '🥰 Queridinhos da família',
     '🧛‍♂️🥷🦸‍♀️',
     '🔥 Em alta',
     'Especial para você 💅'
@@ -107,7 +108,12 @@ export function Home() {
       <Search>
         <SearchField onKeyDown={(e) => {
           if (e.key === 'Enter') {
-            return history.push('/watch')
+            toast('Redirecionando...', {
+              type: 'success'
+            });
+            return setTimeout(() => {
+              history.push('/watch');
+            }, 2500)
           }
         }} />
       </Search>
