@@ -1,6 +1,6 @@
 # AnimoZ
 
-https://animo-z.vercel.app/
+https://animoz.vercel.app/
 
-https://animo-z.vercel.app/watch
+https://animoz.vercel.app/watch
 
